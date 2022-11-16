@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ShellCode_Testing",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Convert::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Convert-Debug-25722c4f4a60ae260a4e.json",
+					"name" : "Convert",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Exit::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Exit-Debug-e5d2a90ae90867338e29.json",
+					"name" : "Exit",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "GetWinExecAddr::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GetWinExecAddr-Debug-898aba33798749f42747.json",
+					"name" : "GetWinExecAddr",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Run::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Run-Debug-d5af290c92e07b6d6b93.json",
+					"name" : "Run",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Student/CLionProjects/ShellCode-Testing/cmake-build-debug",
+		"source" : "C:/Users/Student/CLionProjects/ShellCode-Testing"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

@@ -1,0 +1,6 @@
+C:/Users/Student/CLionProjects/ShellCode-Testing/cmake-build-debug/CMakeFiles/Run.dir
+C:/Users/Student/CLionProjects/ShellCode-Testing/cmake-build-debug/CMakeFiles/Exit.dir
+C:/Users/Student/CLionProjects/ShellCode-Testing/cmake-build-debug/CMakeFiles/GetWinExecAddr.dir
+C:/Users/Student/CLionProjects/ShellCode-Testing/cmake-build-debug/CMakeFiles/Convert.dir
+C:/Users/Student/CLionProjects/ShellCode-Testing/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Student/CLionProjects/ShellCode-Testing/cmake-build-debug/CMakeFiles/rebuild_cache.dir
