@@ -2,9 +2,11 @@
 ; author: Chris5011
 ; date: 14. Nov 2022
 ; from: https://cocomelonc.github.io/tutorial/2021/10/27/windows-shellcoding-1.html
-; nasm -f elf64 -o shellcode.o shellcode.asm
-; ld -m elf_x86_64 -o shellcode shellcode.o
-; 64-bit linux exe --> Works in windows as ShellCode
+; nasm -f lef32 -o shellcode.o shellcode.asm
+; ld -m elf_i386 -o shellcode.exe shellcode.o
+; objdump -M intel -d shellcode.exe
+; objdump -M intel -d shellcode.exe | grep '[0-9a-f]:'|grep -v 'file'|cut -f2 -d:|cut -f1-6 -d' '|tr -s ' '|tr '\t' ' '|sed 's/ $//g'|sed 's/ /\\x/g'|paste -d '' -s |sed 's/^/"/'|sed 's/$/"/g'
+; 32-bit linux exe --> Works in windows as ShellCode
 
 
 section .data
@@ -15,22 +17,22 @@ section .text
 	global _start	 	    ; must be declared for linker
 				
 _start:
-	xor rcx, rcx		    ; Zero out rcx
-	push rcx		        ; String-Terminator
+	xor ecx, ecx		    ; Zero out ecx
+	push ecx		        ; String-Terminator
 	push 0x6578652e		    ; Push exe.
 	push 0x636c6163		    ; Push clac
 
-	mov rax, rsp		    ; save the pointer to "calc.exe" string in rbx
+	mov ebx, esp		    ; save the pointer to "calc.exe" string in ebx
 				
 	; UINT WinExec([in] LPCSTR lpCmdLine, [in] UINT   uCmdShow);
-	inc rcx			        ; uCmdShow = 1
-	push rcx		        ; uCmdShow *ptr to stack on pos 2
-	push rax		        ; lpCmdLine *ptr to stack on pos 1 (LIFO)
-	mov rbx, 0x7ffc415e6140	; move and call WinExec() function on current Address in Kernel32.dll
-	call rbx		;
+	inc ecx			        ; uCmdShow = 1
+	push ecx		        ; uCmdShow *ptr to stack on pos 2
+	push eax		        ; lpCmdLine *ptr to stack on pos 1 (LIFO)
+	mov ebx, 0x76d1f52e		; move and call WinExec() function on current Address in Kernel32.dll
+	call ebx				;
 				
 	; void ExitProcess([in] UINT uExitCode);
-	xor rax, rax		    ; Zero out rax
-	push rax		        ; push NULL
-	mov rax, 0x7ffc4159e0a0	; move and call ExitProcess() function on current Address in Kernel32.dll
-	jmp rax			        ; execute the ExitProcess() function
+	xor eax, eax		    ; Zero out eax
+	push eax		        ; push NULL
+	mov eax, 0x76cebe8a		; move and call ExitProcess() function on current Address in Kernel32.dll
+	jmp eax			        ; execute the ExitProcess() function

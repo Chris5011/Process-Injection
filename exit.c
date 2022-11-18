@@ -1,4 +1,5 @@
 #include <windows.h>
+#include <stdio.h>
 
 /*
  * This Program runs calc.exe and exits the process.
