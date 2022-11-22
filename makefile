@@ -29,5 +29,8 @@ findkernel.exe:
 	ld -m i386pe -o $(OUTDIR)/findKernel32.exe $(OUTDIR)/findKernel32.o
 	rm $(OUTDIR)/findKernel32.o
 
-
-
+CPP-Test:
+	g++ -std=c++11 CPP-Test.cpp -o $(OUTDIR)/cpp/CPP-Test.exe 
+	
+injectproc: 
+	g++ -std=c++11 InjectRemoteProcess.cpp -o $(OUTDIR)/cpp/InjectRemoteProcess.exe -Wall
